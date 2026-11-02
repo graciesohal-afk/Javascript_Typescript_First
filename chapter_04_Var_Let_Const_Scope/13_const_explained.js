@@ -1,27 +1,28 @@
-const baseURL = "https:google.com/";
-const baseURL = "https:google.com/";//no redeclartion possible with const
-baseURL = "https:facebook.com/";//no reassignment possible with const
+const baseURL = "https://google.com/";
+console.log("baseURL:", baseURL);
+// baseURL = "https://facebook.com/"; // cannot reassign a const variable
 
-const name = "pending"
+const name = "pending";
 {
-    const name = "done"//no redeclartion possible with const
-    console.log("inside the block name:", name);//done                
+    const name = "done"; // block-scoped const can be redeclared in a different scope
+    console.log("inside the block name:", name);
 }
 
 function say() {
-    const name = "gracie"
-    console.log("inside the function:", name);//gracie;
-
+    const name = "gracie";
+    console.log("inside the function:", name);
 }
+
 if (true) {
-    const name = "Hari"
-    console.log("inside if block:", name);//Hari
+    const name = "Hari";
+    console.log("inside if block:", name);
 }
-for (let i = 0; i < 11; i++) {
-    const name = "Hari"
-    console.log("inside  for block:", name);//Hari
-}
-console.log("Outside all blocks", name);//gracie
 
-say()
-console.log("Outside all blocks", name);//pending
+for (let i = 0; i < 3; i++) {
+    const name = "Hari";
+    console.log("inside for block:", name);
+}
+
+console.log("Outside all blocks:", name);
+say();
+console.log("Outside all blocks:", name);
