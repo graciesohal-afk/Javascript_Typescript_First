@@ -1,0 +1,24 @@
+let statusCode = 400
+/*
+
+score >= 200  &&  score>=299 (Success)
+score >= 300  &&  score<=399 (Redirection)
+score >= 400  &&  score<=499 (Client Error)
+score >= 500  &&  score<=599 (Server Error)
+score (Anything Else) (Invalid)
+*/
+if (statusCode >= 200 && statusCode <= 299) {
+    console.log("Success")
+}
+else if (statusCode >= 300 && statusCode <= 399) {
+    console.log("Redirection")
+}
+else if (statusCode >= 400 && statusCode <= 499) {
+    console.log("Client Error")
+}
+else if (statusCode >= 500 && statusCode <= 599) {
+    console.log("Server Error")
+}
+else {
+    console.log("Invalid")
+}
